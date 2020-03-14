@@ -1,0 +1,52 @@
+<div class="container">
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-card>
+            <mat-card-title>
+                <h1>Buscar Canción</h1>
+            </mat-card-title>
+            <mat-card-content>
+
+                <form [formGroup]="formBuscar">
+                    <mat-form-field class="example-form-field">
+                        <mat-label>Artista</mat-label>
+                        <input formControlName="Artista" matInput type="text">
+                        <mat-icon matSuffix>album</mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-form-field">
+                        <mat-label>Canción</mat-label>
+                        <input formControlName="Cancion" matInput type="text">
+                        <mat-icon matSuffix>music_video</mat-icon>
+                    </mat-form-field>
+                    <button (click)="Buscar(formBuscar.value)" mat-button class="btn" [disabled]="formBuscar.invalid"><mat-icon>done</mat-icon></button>
+                </form>
+                <div class="alerta" *ngIf="Artista.invalid && Artista.touched || Cancion.invalid && Cancion.touched">
+                    <small>Datos Requeridos</small>
+                </div>
+            </mat-card-content>
+
+        </mat-card>
+    </div>
+
+    <app-loading *ngIf="loading==false"></app-loading>
+
+    <mat-card *ngIf="msgErr==true" class="cardError">
+        <mat-card-title>
+            <h3>Ooops Ocurrio Un Error</h3>
+        </mat-card-title>
+        <mat-card-content>
+            <h4>Verifica que el nombre del artista y el nombre de la canción sean correctos</h4>
+            <h4>Ejemplo: Adele One And Only</h4>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card *ngIf="letra!=null">
+        <mat-card-title>
+            <h4>Resultado de la Busqueda:</h4>
+        </mat-card-title>
+        <mat-card-content>
+            <p>{{letra}}</p>
+        </mat-card-content>
+    </mat-card>
+
+</div>

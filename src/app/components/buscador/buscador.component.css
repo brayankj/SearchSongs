@@ -1,0 +1,42 @@
+mat-card {
+    margin: 15px;
+    background: #e6e6e6;
+}
+
+mat-card-title {
+    text-align: center;
+}
+
+mat-form-field {
+    padding: 10px;
+}
+
+.btn {
+    color: green;
+}
+
+p {
+    line-height: 2;
+    justify-content: center;
+}
+
+.alerta {
+    padding: 5px;
+    width: 100%;
+    background-color: #f05252;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-right: -5px;
+}
+
+.cardError {
+    background: #fff;
+    text-align: center;
+    color: rgb(112, 109, 109);
+}
+
+.cardError h3 {
+    color: rgb(238, 96, 96);
+}
